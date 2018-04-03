@@ -3,7 +3,7 @@ var koa = require('koa')
 var sha1 = require('sha1')
 
 var app = new koa()
-module.exports = (opts) => function(ctx, next) {
+module.exports = (opts) => async function(ctx, next) {
     console.log(opts)
     console.log(ctx.query)
     var token = opts.token
@@ -17,6 +17,8 @@ module.exports = (opts) => function(ctx, next) {
     console.log(signature)
     if (sha === signature) {
         ctx.body = echostr + ''
+    } else {
+        ctx.body = 'wong'
     }
-    next(ctx, next)
+    await next()
 }
