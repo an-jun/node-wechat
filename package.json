@@ -6,7 +6,10 @@
   "author": "anjuncc <anjuncc@163.com>",
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^3.5.1",
     "koa": "^2.5.0",
+    "path": "^0.12.7",
+    "request": "^2.85.0",
     "sha1": "^1.1.1"
   }
 }
