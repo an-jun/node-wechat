@@ -1,5 +1,6 @@
 'use strict'
 var koa = require('koa')
+const xmlParser = require('koa-xml-body')
 var sha1 = require('sha1')
 var path = require('path')
 var util = require('./libs/util')
@@ -20,6 +21,8 @@ var config = {
     }
 }
 var app = new koa()
+
+app.use(xmlParser())
 app.use(wechat(config.wechat))
 app.listen(1234)
 console.log('listening:1234')

@@ -13,7 +13,7 @@ exports.writeFileAsync = function(fpath, content) {
     return new Promise(function(resolve, reject) {
         fs.writeFile(fpath, content, function(err) {
             if (err) reject(err)
-            else resolve()
+            else resolve(content)
         })
     })
 }
